@@ -1,0 +1,5 @@
+BOUTON = (pousse -> BOUTON).
+
+RELAIS =( on -> off -> RELAIS).
+
+||SYSTEME(N=5)  = (b[1..N]:BOUTON ||RELAIS)/{b[1..N].pousse/on,b[1..N].pousse/off}.

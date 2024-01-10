@@ -1,0 +1,9 @@
+FMRADIO = OFF,
+OFF = (on -> FQ88),
+FQ88  = (off -> OFF | scan -> RECHERCHE | reset -> FQ88),
+RECHERCHE = ( ajuster -> AUTREFQ | fin -> FQ88 | off -> OFF | reset -> FQ88 | scan -> RECHERCHE),
+AUTREFQ = (off -> OFF | reset -> FQ88 | scan -> RECHERCHE).
+
+HORLOGE = OFF,
+ON = ( off -> OFF | tick -> ON | tick ->  STOP),
+OFF = ( on -> ON ).
