@@ -4,3 +4,5 @@ SUM = (
 in[a:T] ->
 in[b:T] ->
 out[a+b]-> SUM).
+INPUT = (in[1] -> in[1] -> END) + {in[T]}.
+||RES = (INPUT || SUM).

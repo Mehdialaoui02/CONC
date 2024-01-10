@@ -1,0 +1,12 @@
+BUTTON = (press -> BUTTON).
+DOOR = (open -> close -> DOOR).
+TEMPO(N=3) = INIT[N],
+INIT[n:0..N] = (start -> COUNT[n]),
+COUNT[n:0..N] = (
+when n > 1 tick -> COUNT[n-1] |
+when n <= 1 tick -> ask_close -> INIT[N] |
+reset -> INIT[N]).
+||SYS = (b[1..2]:BUTTON || DOOR || TEMPO) / {
+ask_close / close,
+b[1..2].press / {start,open,close,reset}
+}
