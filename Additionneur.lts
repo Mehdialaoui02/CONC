@@ -1,0 +1,6 @@
+const N = 2
+range T = 0..N
+SUM = (
+in[a:T] ->
+in[b:T] ->
+out[a+b]-> SUM).
