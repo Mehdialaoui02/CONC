@@ -1,0 +1,15 @@
+SAS = (vider -> remplir -> SAS).
+
+VANTAIL = (ouvrir -> fermer -> VANTAIL).
+
+DRAIN = (ecouler -> bloquer -> DRAIN).
+
+||SYSprimitif = (s:SAS || v[1..2]:VANTAIL || d: DRAIN) / 
+{s.vider/{v1.fermer, v2.ouvrir,d.bloquer}, s.remplir /{v2.fermer, d.ecouler}}.
+
+||MOITIESYS =  (sysp[1..3]:SYSprimitif)/
+{sysp1.v2.fermer / sysp2.v1.fermer, sysp1.v2.ouvrir / sysp2.v1.ouvrir,
+sysp2.v2.fermer / sysp3.v1.fermer, sysp2.v2.ouvrir / sysp3.v1.ouvrir}.
+
+
+||SYSTEME = (m1:MOITIESYS||m2:MOITIESYS).
